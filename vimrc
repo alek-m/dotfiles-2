@@ -30,12 +30,12 @@ set title
 set softtabstop=4
 set autoindent
 set hlsearch
-set textwidth=79
 set backspace=2
 set nobackup
 set smartcase
 set lbr 
 set wrapmargin=79
+set textwidth=79
 
 " Set the default language for this host
 "set spellfile=~/.vim/spell
