@@ -36,6 +36,8 @@ set smartcase
 set lbr 
 set wrapmargin=79
 set textwidth=79
+set colorcolumn=+1
+highlight ColorColumn ctermbg=green guibg=SlateBlue
 
 " Set the default language for this host
 "set spellfile=~/.vim/spell
