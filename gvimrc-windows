@@ -1,0 +1,32 @@
+" For MacVIM or GVIM
+if has('gui_running')
+
+    "colorscheme vibrantink
+    colorscheme molokai
+    set lines=170
+    set columns=150
+
+    " set guifont=Inconsolata:h8
+    " set guifont=Andale\ Mono:h10:cANSI  
+    " set guifont=Courier\ New:h10
+    " set guifont=Consolas:h11:cANSI  
+    set guifont=Envy\ Code\ R:h11:cANSI  
+
+    " Function that puts a number into the tab label
+    set guitablabel=(%N%M)\ %t
+
+    " Turn off the toolbar
+    set guioptions-=T
+    
+    " Ensure I always use the tree style for browsing files
+    let g:netrw_liststyle=3
+
+    " If we are in the gui, highlight the lines that are longer than 80 characters
+    " highlight OverLength ctermbg=red ctermfg=white guibg=#592929
+    " match OverLength /\%81v.\+/
+
+    " Have a nice colour for the over line
+    " highlight ColorColumn ctermbg=green guibg=darkgreen
+
+endif 
+
