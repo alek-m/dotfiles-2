@@ -1,3 +1,4 @@
+# A lot of inspiration is drawn from Guckes' original screenrc
 # http://www.guckes.net/vortraege/screen/screenrc.2006-03-06
 
 altscreen on
@@ -40,14 +41,15 @@ screen -t alpha     0
 
 
 
-################
 # 256 colors
 # http://frexx.de/xterm-256-notes/
 # terminfo and termcap for nice 256 color terminal
 # allow bold colors - necessary for some reason
 attrcolor b ".I"
+
 # tell screen how to set colors. AB = background, AF=foreground
 termcapinfo xterm 'Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm'
+
 # erase background with current bg color
 # defbce "on"
 
