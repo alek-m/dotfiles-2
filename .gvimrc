@@ -2,12 +2,12 @@
 if has('gui_running')
 
     set mouse=a
-    colorscheme vibrantink
+    colorscheme molokai
 
-    set lines=70
-    set columns=150
-    set transparency=5
-    set guifont=Inconsolata:h16
+    set lines=60
+    set columns=160
+    set transparency=3
+    set guifont=Source\ Code\ Pro:h15
 
     " Function that puts a number into the tab label
     set guitablabel=(%N%M)\ %t

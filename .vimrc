@@ -28,16 +28,19 @@ set wildmenu
 set wildignore=*.swp,*.bak,*.pyc,*.class
 set title
 set softtabstop=4
+set smartindent
 set autoindent
 set hlsearch
 set backspace=2
 set nobackup
 set smartcase
 set lbr 
-set wrapmargin=79
+set formatoptions=cqt
+set wrapmargin=0
 set textwidth=79
-set colorcolumn=+1
-highlight ColorColumn ctermbg=green guibg=SlateBlue
+set rtp+=/usr/local/go/misc/vim
+"set colorcolumn=+1
+"highlight ColorColumn ctermbg=LightGreen guibg=DarkGreen
 
 " Set the default language for this host
 "set spellfile=~/.vim/spell
@@ -101,4 +104,9 @@ map ,( :s/^\(.*\)$/\(\* \1 \*\)/<CR>:nohlsearch<CR>
 map ,< :s/^\(.*\)$/<!-- \1 -->/<CR>:nohlsearch<CR>
 map ,d :s/^\([/(]\*\\|<!--\) \(.*\) \(\*[/)]\\|-->\)$/\2/<CR>:nohlsearch<CR>
 
+" Adding Pathogen support
+call pathogen#infect()
+call pathogen#helptags()
 
+" We are adding support for flake8 (and PEP8)
+autocmd BufWritePost *.py call Flake8()
