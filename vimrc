@@ -14,8 +14,8 @@ set background=dark
 set number
 set ignorecase
 set incsearch
-set shiftwidth=4
-set tabstop=4
+set shiftwidth=2
+set tabstop=2
 set expandtab
 set smarttab
 set encoding=utf-8
@@ -27,7 +27,7 @@ set noerrorbells
 set wildmenu
 set wildignore=*.swp,*.bak,*.pyc,*.class
 set title
-set softtabstop=4
+set softtabstop=2
 set smartindent
 set autoindent
 set hlsearch

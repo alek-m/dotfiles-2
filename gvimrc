@@ -6,8 +6,8 @@ if has('gui_running')
 
     set lines=60
     set columns=160
-    set transparency=3
-    set guifont=Source\ Code\ Pro:h15
+    set transparency=4
+    set guifont=Source\ Code\ Pro:h14
 
     " Function that puts a number into the tab label
     set guitablabel=(%N%M)\ %t
