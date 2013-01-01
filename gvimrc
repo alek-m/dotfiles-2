@@ -2,10 +2,10 @@
 if has('gui_running')
 
     set mouse=a
-    colorscheme molokai
+    colorscheme vividchalk
 
-    set lines=60
-    set columns=160
+    set lines=55
+    set columns=150
     set transparency=4
     set guifont=Source\ Code\ Pro:h14
 
