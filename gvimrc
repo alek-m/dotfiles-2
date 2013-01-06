@@ -2,7 +2,7 @@
 if has('gui_running')
 
     set mouse=a
-    colorscheme vividchalk
+    colorscheme distinguished
 
     set lines=55
     set columns=150
@@ -14,6 +14,9 @@ if has('gui_running')
 
     " Turn off the toolbar
     set guioptions-=T
+
+    " Turn off the right-hand side scrollbar
+    set guioptions-=r 
     
     " Ensure I always use the tree style for browsing files
     let g:netrw_liststyle=3
