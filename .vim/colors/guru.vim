@@ -43,6 +43,8 @@ if has("gui_running")
 
     " JavaScript Bindings
     highlight javaScriptType guifg=#afe459 gui=NONE
+    highlight javaScriptNumber guifg=#66d9ef gui=NONE
+
 else
     set t_Co=256
     highlight Normal ctermfg=White ctermbg=Black 
@@ -68,6 +70,7 @@ else
 
     " JavaScript Bindings
     highlight javaScriptType ctermfg=118
+    highlight javaScriptNumber ctermfg=67
 endif
 
 " Colors
