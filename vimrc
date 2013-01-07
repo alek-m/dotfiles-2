@@ -37,10 +37,10 @@ set smartcase
 set lbr 
 set formatoptions=cqt
 set wrapmargin=0
-set textwidth=79
-set rtp+=/usr/local/go/misc/vim
-"set colorcolumn=+1
-"highlight ColorColumn ctermbg=LightGreen guibg=DarkGreen
+set textwidth=80
+" set rtp+=/usr/local/go/misc/vim
+set colorcolumn=+1
+highlight ColorColumn ctermfg=LightGreen guifg=DarkGreen ctermbg=NONE
 
 " Set the default language for this host
 "set spellfile=~/.vim/spell
@@ -110,3 +110,41 @@ call pathogen#helptags()
 
 " We are adding support for flake8 (and PEP8)
 autocmd BufWritePost *.py call Flake8()
+
+" Show syntax highlighting groups for word under cursor
+nmap <C-S-P> :call <SID>SynStack()<CR>
+function! <SID>SynStack()
+  if !exists("*synstack")
+    return
+  endif
+  echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
+endfunc
+
+" For MacVIM or GVIM
+if has('gui_running')
+
+    set mouse=a
+    colorscheme guru
+
+    set lines=55
+    set columns=150
+    set transparency=4
+    set guifont=Source\ Code\ Pro:h14
+
+    " Function that puts a number into the tab label
+    set guitablabel=(%N%M)\ %t
+
+    " Turn off the toolbar
+    set guioptions-=T
+
+    " Turn off the right-hand side scrollbar
+    set guioptions-=r 
+    
+    " Ensure I always use the tree style for browsing files
+    let g:netrw_liststyle=3
+
+    " If we are in the gui, highlight the lines that are longer than 80 characters
+    " highlight OverLength ctermbg=red ctermfg=white guibg=#592929
+    " match OverLength /\%81v.\+/
+
+endif 
