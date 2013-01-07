@@ -7,7 +7,7 @@ if exists("##ColorScheme")
 endif 
 
 " This is to stop keyboard mapping problems, enable if you have issues
-set term=builtin_ansi
+" set term=builtin_ansi
 
 set nocompatible
 set background=dark
@@ -39,8 +39,8 @@ set formatoptions=cqt
 set wrapmargin=0
 set textwidth=80
 " set rtp+=/usr/local/go/misc/vim
-set colorcolumn=+1
-highlight ColorColumn ctermfg=LightGreen guifg=DarkGreen ctermbg=NONE
+" set colorcolumn=+1
+" highlight ColorColumn ctermfg=LightGreen guifg=DarkGreen ctermbg=NONE
 
 " Set the default language for this host
 "set spellfile=~/.vim/spell

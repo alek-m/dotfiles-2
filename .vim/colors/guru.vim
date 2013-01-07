@@ -1,14 +1,74 @@
-" Guru color scheme, based on the Paukulus 'hardcore' theme.
-" Specifically modified for use in JavaScript coding. 
-" 2013, Shaon Diwakar <shaon@shaon.net>
-" Same rights as vim itself
+" Vim color scheme
+"
+" Name:         guru.vim
+" Maintainer:   Shaon Diwakar <shaon@shaon.net>
+" License:      public domain
+" Version:      1.0
+"
+" This scheme should work in the GUI and in xterm's 256 color mode. It won't
+" work in 8/16 color terminals.
+
+" Derived/forked from work done by Jo Vermeulen
 
 set background=dark
+
 hi clear
 if exists("syntax_on")
-  syntax reset
+   syntax reset
 endif
+
 let g:colors_name = "guru"
+
+if has("gui_running")
+    highlight Normal guifg=White   guibg=Black
+    highlight Cursor guifg=Black   guibg=Yellow
+    highlight Keyword guifg=#FF6600
+    highlight Define guifg=#FF6600
+    highlight Comment guifg=#9933CC
+    highlight Type guifg=White gui=NONE
+    highlight Identifier guifg=White gui=NONE
+    highlight Constant guifg=#FFEE98
+    highlight Function guifg=#FFCC00 gui=NONE
+    highlight Include guifg=#FFCC00 gui=NONE
+    highlight Statement guifg=#FF6600 gui=NONE
+    highlight String guifg=#66FF00
+    highlight Search guibg=White
+    highlight CursorLine guibg=#323300
+    
+    " Ruby Bindings
+    highlight rubySymbol guifg=#339999 gui=NONE
+    highlight rubyStringDelimiter guifg=#66FF00
+    highlight rubyInterpolation guifg=White
+    highlight rubyPseudoVariable guifg=#339999
+
+    " JavaScript Bindings
+    highlight javaScriptType guifg=#afe459 gui=NONE
+else
+    set t_Co=256
+    highlight Normal ctermfg=White ctermbg=Black 
+    highlight Cursor ctermfg=Black ctermbg=Yellow 
+    highlight Keyword ctermfg=202 
+    highlight Define ctermfg=202 
+    highlight Comment ctermfg=98
+    highlight Type ctermfg=White 
+    highlight Identifier ctermfg=White 
+    highlight Constant ctermfg=228 
+    highlight Function ctermfg=220 
+    highlight Include ctermfg=220 
+    highlight Statement ctermfg=202
+    highlight String ctermfg=82 
+    highlight Search ctermbg=White 
+    highlight CursorLine cterm=NONE ctermbg=235
+
+    " Ruby Bindings
+    highlight rubySymbol ctermfg=66 
+    highlight rubyStringDelimiter ctermfg=82 
+    highlight rubyInterpolation ctermfg=White 
+    highlight rubyPseudoVariable ctermfg=66 
+
+    " JavaScript Bindings
+    highlight javaScriptType ctermfg=118
+endif
 
 " Colors
 " Foreground   #a0a0a0
@@ -23,206 +83,7 @@ let g:colors_name = "guru"
 " Grey         #708488 237
 " Light Grey   #d6d5d1 214
 " Pink         #ff669d 161
+"
 " Brown        #f2882d
 " hot pink     #6D9CBE 161
 " Tan          #FFC66D 180
-
-hi Normal                    guifg=#f6f3e8 guibg=#161616
-hi Cursor                    guibg=#d6d5d1
-hi CursorLine                guibg=#505354 gui=NONE
-hi LineNr                    guifg=#888888 guibg=#161616
-hi Search                    guibg=#dfdb74
-hi Visual                    guibg=#363983
-
-" Folds
-" -----
-" line used for closed folds
-hi Folded                    guifg=#F6F3E8 guibg=#444444 gui=NONE
-
-" Misc
-" ----
-" directory names and other special names in listings
-hi Directory                 guifg=#6D9CBE gui=NONE
-
-" Popup Menu
-" ----------
-" normal item in popup
-hi Pmenu                     guifg=#F6F3E8 guibg=#444444 gui=NONE
-" selected item in popup
-hi PmenuSel                  guifg=#000000 guibg=#A5C261 gui=NONE
-" scrollbar in popup
-hi PMenuSbar                 guibg=#5A647E gui=NONE
-" thumb of the scrollbar in the popup
-hi PMenuThumb                guibg=#AAAAAA gui=NONE
-
-
-"rubyComment
-hi Comment                   guifg=#505354 gui=italic
-hi Todo                      guifg=#ff669d guibg=NONE gui=italic
-
-"rubyPseudoVariable
-"nil, self, symbols, etc
-hi Constant                  guifg=#6D9CBE
-
-"rubyClass, rubyModule, rubyDefine
-"def, end, include, etc
-hi Define                    guifg=#ffa542
-
-"rubyInterpolation
-hi Delimiter                 guifg=#519F50
-
-"rubyError, rubyInvalidVariable
-hi Error                     guifg=#FFFFFF guibg=#990000
-
-"rubyFunction
-hi Function                  guifg=#FFC66D gui=NONE
-
-"rubyIdentifier
-"@var, @@var, $var, etc
-hi Identifier                guifg=#66d9ef gui=NONE
-
-"rubyInclude
-"include, autoload, extend, load, require
-hi Include                   guifg=#ffa542 gui=NONE
-
-"rubyKeyword, rubyKeywordAsMethod
-"alias, undef, super, yield, callcc, caller, lambda, proc
-hi Keyword                   guifg=#CC7833
-
-" same as define
-hi Macro                     guifg=#CC7833 gui=NONE
-
-"rubyInteger, javaScriptNumber
-hi Number                    guifg=#A5C261
-
-" #if, #else, #endif
-hi PreCondit                 guifg=#CC7833 gui=NONE
-
-" generic preprocessor
-hi PreProc                   guifg=#CC7833 gui=NONE
-
-"rubyControl, rubyAccess, rubyEval
-"case, begin, do, for, if unless, while, until else, etc.
-hi Statement                 guifg=#CC7833 gui=NONE
-
-"rubyString
-hi String                    guifg=#afe459
-
-hi Title                     guifg=#FFFFFF
-
-"rubyConstant
-hi Type                      guifg=#ff3c83 gui=NONE
-
-hi DiffAdd                   guifg=#E6E1DC guibg=#144212
-hi DiffDelete                guifg=#E6E1DC guibg=#660000
-
-hi link htmlTag              xmlTag
-hi link htmlTagName          xmlTagName
-hi link htmlEndTag           xmlEndTag
-
-hi xmlTag                    guifg=#E8BF6A ctermfg=234
-hi xmlTagName                guifg=#E8BF6A
-hi xmlEndTag                 guifg=#E8BF6A
-
-if &t_Co > 255
-  hi Normal                    ctermfg=254 ctermbg=233
-  hi Cursor                    ctermbg=255
-  hi CursorLine                ctermbg=234 cterm=NONE
-  hi LineNr                    ctermfg=242 ctermbg=234
-  hi Search                    ctermbg=67
-  hi Visual                    ctermbg=67
-
-  " Folds
-  " -----
-  " line used for closed folds
-  hi Folded                    ctermfg=254 ctermbg=214 cterm=NONE
-
-  " Misc
-  " ----
-  " directory names and other special names in listings
-  hi Directory                 ctermfg=161 cterm=NONE
-
-  " Popup Menu
-  " ----------
-  " normal item in popup
-  hi Pmenu                     ctermfg=242 ctermbg=234
-  " selected item in popup
-  hi PmenuSel                  ctermfg=16 ctermbg=250
-  " scrollbar in popup
-  hi PMenuSbar                 ctermbg=237
-  " thumb of the scrollbar in the popup
-  hi PMenuThumb                ctermbg=239
-
-
-  "rubyCommen TODO: t
-  hi Comment                   ctermfg=237
-  hi Todo                      ctermfg=161 ctermbg=NONE
-
-  "rubyPseudoVariable
-  "nil, self, symbols, etc
-  hi Constant                  ctermfg=67
-
-  "rubyClass, rubyModule, rubyDefine
-  "def, end, include, etc
-  hi Define                    ctermfg=130
-
-  "rubyInterpolation
-  hi Delimiter                 ctermfg=71
-
-  "rubyError, rubyInvalidVariable
-  hi Error                     ctermfg=255 ctermbg=160
-
-  "rubyFunction
-  hi Function                  ctermfg=180 cterm=NONE
-
-  "rubyIdentifier
-  "@var, @@var, $var, etc
-  hi Identifier                ctermfg=69 cterm=NONE
-
-  "rubyInclude
-  "include, autoload, extend, load, require
-  hi Include                   ctermfg=130 cterm=NONE
-
-  "rubyKeyword, rubyKeywordAsMethod
-  "alias, undef, super, yield, callcc, caller, lambda, proc
-  hi Keyword                   ctermfg=130
-
-  " same as define
-  hi Macro                     ctermfg=130 cterm=NONE
-
-  "rubyInteger
-  hi Number                    ctermfg=30
-
-  " #if, #else, #endif
-  hi PreCondit                 ctermfg=130 cterm=NONE
-
-  " generic preprocessor
-  hi PreProc                   ctermfg=209 cterm=NONE
-
-  "rubyControl, rubyAccess, rubyEval
-  "case, begin, do, for, if unless, while, until else, etc.
-  hi Statement                 ctermfg=130 cterm=NONE
-
-  "rubyString
-  hi String                    ctermfg=118
-
-  hi Title                     ctermfg=16
-
-  "rubyConstant
-  hi Type                      ctermfg=161 cterm=NONE
-
-  hi DiffAdd                   ctermfg=252 ctermbg=71
-  hi DiffDelete                ctermfg=252 ctermbg=204
-
-  hi htmlH1               guifg=#f6f3e8
-  hi link htmlTag              xmlTag
-  hi link htmlTagName          xmlTagName
-  hi link htmlEndTag           xmlEndTag
-
-  hi xmlTag                    ctermfg=180
-  hi xmlTagName                ctermfg=180
-  hi xmlEndTag                 ctermfg=180
-
-  " JavaScript additions
-  hi javaScriptNumber          ctermfg=30
-end
