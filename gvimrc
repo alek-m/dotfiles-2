@@ -29,6 +29,6 @@ if has('gui_running')
     set guioptions+=e
 
     " Function that puts a number into the tab label
-    set guitablabel=(%N)\ %f
+    set guitablabel=(%N)\ %t
 
 endif 
