@@ -1,5 +1,5 @@
 " For MacVIM or GVIM
-if has('gui_macvim')
+if has('gui_running')
 
     set mouse=a
     colorscheme guru
