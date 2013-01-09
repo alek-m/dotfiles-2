@@ -31,4 +31,7 @@ if has('gui_running')
     " Function that puts a number into the tab label
     set guitablabel=(%N)\ %t
 
+    " Set the Cursor Line
+    set cursorline
+
 endif 
