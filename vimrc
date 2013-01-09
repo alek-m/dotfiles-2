@@ -119,3 +119,6 @@ function! <SID>SynStack()
   endif
   echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
 endfunc
+
+" JSLint
+let g:JSLintHighlightErrorLine = 0
