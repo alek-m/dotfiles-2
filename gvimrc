@@ -19,8 +19,8 @@ if has('gui_running')
     let g:netrw_liststyle=3
 
     " If we are in the gui, highlight the lines that are longer than 80 characters
-    highlight OverLength ctermbg=red ctermfg=white guibg=#592929
-    match OverLength /\%81v.\+/
+    " highlight OverLength ctermbg=red ctermfg=white guibg=#592929
+    " match OverLength /\%81v.\+/
 
     " Show the tabline
     set showtabline=1

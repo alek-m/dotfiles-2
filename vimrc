@@ -19,6 +19,7 @@ set tabstop=2
 set expandtab
 set smarttab
 set encoding=utf-8
+set hidden
 set ruler
 set showcmd
 set showmode
@@ -86,6 +87,10 @@ set statusline+=%=
 set statusline+=0x%-8B
 set statusline+=%-14(%l,%c%V%)
 set statusline+=%<%P
+set statusline+=%{fugitive#statusline()}
+
+" Remapping the <LEADER> key
+let mapleader = ','
 
 " Map the following commands for block commenting
 map ,# :s/^/#/<CR>:nohlsearch<CR>
@@ -120,5 +125,5 @@ function! <SID>SynStack()
   echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
 endfunc
 
-" JSLint
+" JSLint: https://github.com/hallettj/jslint.vim
 let g:JSLintHighlightErrorLine = 0
