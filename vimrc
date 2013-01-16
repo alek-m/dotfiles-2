@@ -126,7 +126,7 @@ function! <SID>SynStack()
 endfunc
 
 " Disable a few plugins
-let g:pathogen_disabled = ['jslint']
+let g:pathogen_disabled = ['jslint', 'jsbeautify']
 
 " JSLint: https://github.com/hallettj/jslint.vim
 let g:JSLintHighlightErrorLine = 0
