@@ -34,4 +34,11 @@ if has('gui_running')
     " Set the Cursor Line
     set cursorline
 
+    " Show invisibles
+    set listchars=tab:▸\ ,eol:¬
+    set list
+
+    " Make NERDTree hijack netrw
+    let NERDTreeHijackNetrw=1
+
 endif 

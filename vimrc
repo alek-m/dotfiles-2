@@ -113,9 +113,6 @@ map ,d :s/^\([/(]\*\\|<!--\) \(.*\) \(\*[/)]\\|-->\)$/\2/<CR>:nohlsearch<CR>
 call pathogen#infect()
 call pathogen#helptags()
 
-" We are adding support for flake8 (and PEP8)
-autocmd BufWritePost *.py call Flake8()
-
 " Show syntax highlighting groups for word under cursor
 nmap <C-S-P> :call <SID>SynStack()<CR>
 function! <SID>SynStack()
