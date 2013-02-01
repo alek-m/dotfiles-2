@@ -6,7 +6,7 @@ if has('gui_running')
 
     set lines=55
     set columns=150
-    set transparency=4
+    set transparency=0
     set guifont=Source\ Code\ Pro:h14
 
     " Turn off the toolbar
@@ -40,5 +40,8 @@ if has('gui_running')
 
     " Make NERDTree hijack netrw
     let NERDTreeHijackNetrw=1
+
+    " Indent Guides
+    let g:indent_guides_guide_size=1
 
 endif 
