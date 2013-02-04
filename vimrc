@@ -39,6 +39,10 @@ set lbr
 set formatoptions=cqt
 set wrapmargin=0
 set textwidth=80
+set foldcolumn=2
+set foldmethod=indent
+set foldlevelstart=5
+
 " set rtp+=/usr/local/go/misc/vim
 " set colorcolumn=+1
 " highlight ColorColumn ctermfg=LightGreen guifg=DarkGreen ctermbg=NONE
@@ -109,10 +113,6 @@ map ,( :s/^\(.*\)$/\(\* \1 \*\)/<CR>:nohlsearch<CR>
 map ,< :s/^\(.*\)$/<!-- \1 -->/<CR>:nohlsearch<CR>
 map ,d :s/^\([/(]\*\\|<!--\) \(.*\) \(\*[/)]\\|-->\)$/\2/<CR>:nohlsearch<CR>
 
-" Adding Pathogen support
-call pathogen#infect()
-call pathogen#helptags()
-
 " Show syntax highlighting groups for word under cursor
 nmap <C-S-P> :call <SID>SynStack()<CR>
 function! <SID>SynStack()
@@ -123,7 +123,11 @@ function! <SID>SynStack()
 endfunc
 
 " Disable a few plugins
-let g:pathogen_disabled = ['jslint', 'jsbeautify']
+let g:pathogen_disabled = ['jslint', 'jsbeautify', 'vim-indent-guides', 'indentLine']
 
 " JSLint: https://github.com/hallettj/jslint.vim
 let g:JSLintHighlightErrorLine = 0
+
+" Adding Pathogen support
+call pathogen#infect()
+call pathogen#helptags()

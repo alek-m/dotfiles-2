@@ -36,7 +36,7 @@ if has('gui_running')
 
     " Show invisibles
     set listchars=tab:▸\ ,eol:¬
-    set list
+    "set list
 
     " Make NERDTree hijack netrw
     let NERDTreeHijackNetrw=1
