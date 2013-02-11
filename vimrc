@@ -39,7 +39,7 @@ set lbr
 set formatoptions=cqt
 set wrapmargin=0
 set textwidth=80
-set foldcolumn=2
+set foldcolumn=0
 set foldmethod=indent
 set foldlevelstart=5
 
@@ -122,11 +122,21 @@ function! <SID>SynStack()
   echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
 endfunc
 
-" Disable a few plugins
-let g:pathogen_disabled = ['jslint', 'jsbeautify', 'vim-indent-guides', 'indentLine']
+" Toggle the fold column
+nnoremap <leader>f :call FoldColumnToggle()<cr>
+function! FoldColumnToggle()
+    if &foldcolumn
+        setlocal foldcolumn=0
+    else
+        setlocal foldcolumn=2
+    endif
+endfunction
 
 " JSLint: https://github.com/hallettj/jslint.vim
 let g:JSLintHighlightErrorLine = 0
+
+" Disable a few plugins
+let g:pathogen_disabled = ['jslint', 'jsbeautify', 'vim-indent-guides']
 
 " Adding Pathogen support
 call pathogen#infect()

@@ -41,7 +41,4 @@ if has('gui_running')
     " Make NERDTree hijack netrw
     let NERDTreeHijackNetrw=1
 
-    " Indent Guides
-    let g:indentLine_char='⦙'
-
 endif 
