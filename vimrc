@@ -36,7 +36,8 @@ set backspace=2
 set nobackup
 set smartcase
 set lbr 
-set formatoptions=cqt
+" set formatoptions=cqt
+set formatoptions=qnjc
 set wrapmargin=0
 set textwidth=80
 set foldcolumn=0
