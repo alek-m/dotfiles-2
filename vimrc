@@ -97,23 +97,6 @@ set statusline+=%{fugitive#statusline()}
 " Remapping the <LEADER> key
 let mapleader = ','
 
-" Map the following commands for block commenting
-map ,# :s/^/#/<CR>:nohlsearch<CR>
-map ,/ :s/^/\/\//<CR>:nohlsearch<CR>
-map ,> :s/^/> /<CR>:nohlsearch<CR>
-map ," :s/^/\"/<CR>:nohlsearch<CR>
-map ,% :s/^/%/<CR>:nohlsearch<CR>
-map ,! :s/^/!/<CR>:nohlsearch<CR>
-map ,; :s/^/;/<CR>:nohlsearch<CR>
-map ,- :s/^/--/<CR>:nohlsearch<CR>
-map ,c :s/^\/\/\\|^--\\|^> \\|^[#"%!;]//<CR>:nohlsearch<CR>
-
-" Map keys for wrap around commenting
-map ,* :s/^\(.*\)$/\/\* \1 \*\//<CR>:nohlsearch<CR>
-map ,( :s/^\(.*\)$/\(\* \1 \*\)/<CR>:nohlsearch<CR>
-map ,< :s/^\(.*\)$/<!-- \1 -->/<CR>:nohlsearch<CR>
-map ,d :s/^\([/(]\*\\|<!--\) \(.*\) \(\*[/)]\\|-->\)$/\2/<CR>:nohlsearch<CR>
-
 " Show syntax highlighting groups for word under cursor
 nmap <C-S-P> :call <SID>SynStack()<CR>
 function! <SID>SynStack()
