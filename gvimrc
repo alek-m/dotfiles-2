@@ -7,7 +7,7 @@ if has('gui_running')
     set lines=55
     set columns=150
     set transparency=0
-    set guifont=Source\ Code\ Pro:h14
+    set guifont=Source\ Code\ Pro\ for\ Powerline:h14
 
     " Turn off the toolbar
     set guioptions-=T
