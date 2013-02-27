@@ -82,20 +82,20 @@ let python_highlight_builtins = 1
 let python_highlight_exceptions = 1
 
 " Set the status line preferences
-set laststatus=2
-set statusline=
-set statusline+=%3.3n\
-set statusline+=%f\
-set statusline+=%h%m%r%w
-set statusline+=\[%{strlen(&ft)?&ft:'none'}]
-set statusline+=%=
-set statusline+=0x%-8B
-set statusline+=%-14(%l,%c%V%)
-set statusline+=%<%P
-set statusline+=%{fugitive#statusline()}
+" set laststatus=2
+" set statusline=
+" set statusline+=%3.3n\
+" set statusline+=%f\
+" set statusline+=%h%m%r%w
+" set statusline+=\[%{strlen(&ft)?&ft:'none'}]
+" set statusline+=%=
+" set statusline+=0x%-8B
+" set statusline+=%-14(%l,%c%V%)
+" set statusline+=%<%P
+" set statusline+=%{fugitive#statusline()}
 
 " Remapping the <LEADER> key
-let mapleader = ','
+"let mapleader = ','
 
 " Show syntax highlighting groups for word under cursor
 nmap <C-S-P> :call <SID>SynStack()<CR>
@@ -118,6 +118,9 @@ endfunction
 
 " JSLint: https://github.com/hallettj/jslint.vim
 let g:JSLintHighlightErrorLine = 0
+
+" Adding support for powerline
+set rtp+=/Users/sdiwakar/.vim/bundle/powerline/powerline/bindings/vim
 
 " Disable a few plugins
 let g:pathogen_disabled = ['jslint', 'jsbeautify', 'vim-indent-guides']
