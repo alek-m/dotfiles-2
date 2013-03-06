@@ -44,6 +44,9 @@ set foldcolumn=0
 set foldmethod=indent
 set foldlevelstart=5
 
+" Set new vertical splits to be on the right
+set splitright
+
 " set rtp+=/usr/local/go/misc/vim
 " set colorcolumn=+1
 " highlight ColorColumn ctermfg=LightGreen guifg=DarkGreen ctermbg=NONE

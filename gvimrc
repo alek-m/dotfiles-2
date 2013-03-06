@@ -5,7 +5,7 @@ if has('gui_running')
     colorscheme guru
 
     set lines=55
-    set columns=150
+    set columns=180
     set transparency=0
     set guifont=Source\ Code\ Pro\ for\ Powerline:h14
 
