@@ -40,5 +40,5 @@ if has('gui_running')
 
     " Make NERDTree hijack netrw
     let NERDTreeHijackNetrw=1
-
+    
 endif 

@@ -25,8 +25,12 @@ set showcmd
 set showmode
 set visualbell
 set noerrorbells
+
+" Auto-completion
+set wildmode=list:longest
 set wildmenu
 set wildignore=*.swp,*.bak,*.pyc,*.class
+
 set title
 set softtabstop=2
 set smartindent
@@ -43,6 +47,13 @@ set textwidth=80
 set foldcolumn=0
 set foldmethod=indent
 set foldlevelstart=5
+
+" Start scrolling when we're 8 lines away from margins
+set scrolloff=8 
+set sidescrolloff=15
+set sidescroll=1
+
+
 
 " Set new vertical splits to be on the right
 set splitright
