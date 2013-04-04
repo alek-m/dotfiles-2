@@ -1,0 +1,25 @@
+[user]
+	name = Shaon Diwakar
+	email = shaon@shaon.net
+[include]
+  path = ~/.dotfiles/gitconfig.private
+[apply]
+    whitespace = strip
+[diff]
+    color = auto
+    rename = copy
+[pager]
+    color = true
+[status]
+    color = auto
+[core]
+	excludesfile = /Users/sdiwakar/.gitignore_global
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[alias]
+  co = checkout
+  br = branch
