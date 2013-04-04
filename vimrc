@@ -142,7 +142,7 @@ let g:JSLintHighlightErrorLine = 0
 set rtp+=/Users/sdiwakar/.vim/bundle/powerline/powerline/bindings/vim
 
 " Disable a few plugins
-let g:pathogen_disabled = ['jslint', 'jsbeautify', 'vim-indent-guides', 'vim-powerline']
+let g:pathogen_disabled = ['jslint', 'jsbeautify', 'vim-indent-guides', 'vim-powerline', 'taglist']
 
 " Adding Pathogen support
 call pathogen#infect()
