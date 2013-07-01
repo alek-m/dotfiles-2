@@ -150,8 +150,12 @@ Bundle 'digitaltoad/vim-jade'
 Bundle 'tpope/vim-markdown'
 Bundle 'Lokaltog/powerline'
 Bundle 'Valloric/YouCompleteMe'
+Bundle 'jelera/vim-javascript-syntax'
 
 filetype plugin indent on
+
+" JavaScript folding & extended syntax
+au FileType javascript call JavaScriptFold()
 
 " Adding support for powerline
 set rtp+=/Users/sdiwakar/.vim/bundle/powerline/powerline/bindings/vim
