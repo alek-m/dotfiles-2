@@ -75,10 +75,6 @@ set directory=~/.vim/tmp//
 set nobackup
 set noswapfile
 
-" Ensure we're always enabling file type checking
-filetype on
-filetype indent on
-filetype plugin on
 
 " Allow tab autocompletion of commands
 autocmd FileType python set omnifunc=pythoncomplete#Complete
@@ -135,15 +131,27 @@ if !exists(":DiffOrig")
   command DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis | wincmd p | diffthis
 endif
 
-" JSLint: https://github.com/hallettj/jslint.vim
-let g:JSLintHighlightErrorLine = 0
+" Ensure we're always enabling file type checking
+filetype off
+filetype indent on
+filetype plugin on
+
+" Vundle Me Up
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+" Vundles
+Bundle 'gmarik/vundle'
+Bundle 'Lokaltog/powerline'
+Bundle 'tpope/vim-fugitive'
+Bundle 'scrooloose/nerdcommenter'
+Bundle 'scrooloose/nerdtree'
+Bundle 'digitaltoad/vim-jade'
+Bundle 'tpope/vim-markdown'
+Bundle 'Lokaltog/powerline'
+
+filetype plugin indent on
 
 " Adding support for powerline
-set rtp+=/Users/sdiwakar/.vim/bundle/powerline/powerline/bindings/vim
+" set rtp+=/Users/sdiwakar/.vim/bundle/powerline/powerline/bindings/vim
 
-" Disable a few plugins
-let g:pathogen_disabled = ['jslint', 'jsbeautify', 'vim-indent-guides', 'vim-powerline', 'taglist']
-
-" Adding Pathogen support
-call pathogen#infect()
-call pathogen#helptags()
