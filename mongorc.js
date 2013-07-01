@@ -1,2 +1,2 @@
 DBQuery.prototype._prettyShell = true
-DBQuery.shellBatchSize = 10;
+DBQuery.shellBatchSize = 50;
