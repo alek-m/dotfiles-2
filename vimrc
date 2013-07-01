@@ -149,9 +149,10 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'digitaltoad/vim-jade'
 Bundle 'tpope/vim-markdown'
 Bundle 'Lokaltog/powerline'
+Bundle 'Valloric/YouCompleteMe'
 
 filetype plugin indent on
 
 " Adding support for powerline
-" set rtp+=/Users/sdiwakar/.vim/bundle/powerline/powerline/bindings/vim
+set rtp+=/Users/sdiwakar/.vim/bundle/powerline/powerline/bindings/vim
 
