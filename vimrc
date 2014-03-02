@@ -40,8 +40,7 @@ set backspace=2
 set nobackup
 set smartcase
 set lbr 
-" set formatoptions=cqt
-set formatoptions=qnjc
+set formatoptions=cqt
 set wrapmargin=0
 set textwidth=80
 set foldcolumn=0
@@ -142,21 +141,30 @@ call vundle#rc()
 
 " Vundles
 Bundle 'gmarik/vundle'
-Bundle 'Lokaltog/powerline'
 Bundle 'tpope/vim-fugitive'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'scrooloose/nerdtree'
 Bundle 'digitaltoad/vim-jade'
 Bundle 'tpope/vim-markdown'
-Bundle 'Lokaltog/powerline'
-Bundle 'Valloric/YouCompleteMe'
 Bundle 'jelera/vim-javascript-syntax'
+Bundle 'scrooloose/syntastic'
+Bundle 'othree/html5.vim'
 
 filetype plugin indent on
+
+" Enable JShint checking
+let g:syntastic_javascript_checkers = ['jshint']
 
 " JavaScript folding & extended syntax
 au FileType javascript call JavaScriptFold()
 
-" Adding support for powerline
-set rtp+=/Users/sdiwakar/.vim/bundle/powerline/powerline/bindings/vim
+" Run these only if there's a GUI
+if has('gui_running')
+  " Adding powerline and YouCompleteMe
+  Bundle 'Lokaltog/powerline'
+  Bundle 'Valloric/YouCompleteMe'
+
+  " Adding support for powerline
+  set rtp+=/Users/sdiwakar/.vim/bundle/powerline/powerline/bindings/vim
+endif
 

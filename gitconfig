@@ -1,6 +1,6 @@
 [user]
 	name = Shaon Diwakar
-	email = shaon@newsmaven.co
+	email = shaon@shaon.net
 [include]
   path = ~/.dotfiles/gitconfig.private
 [apply]
@@ -23,3 +23,5 @@
 [alias]
   co = checkout
   br = branch
+[push]
+	default = simple
