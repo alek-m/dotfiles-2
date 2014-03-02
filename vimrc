@@ -3,7 +3,7 @@
 " Check that colour schemes are enabled. 
 if exists("##ColorScheme")
     syntax on
-    colorscheme torte 
+    colorscheme darkblue 
 endif 
 
 " This is to stop keyboard mapping problems, enable if you have issues
