@@ -1,2 +1,4 @@
 .vim/.netrwhist
 gitconfig.private
+.vim/bundle/
+.vim/pathogen/
