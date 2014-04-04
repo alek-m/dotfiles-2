@@ -7,7 +7,9 @@ if has('gui_running')
     set lines=55
     set columns=180
     set transparency=0
-    set guifont=Source\ Code\ Pro\ for\ Powerline:h14
+    set guifont=Source\ Code\ Pro\ for\ Powerline:h15
+    "set guifont=Inconsolata:h16
+    "set linespace=1.3 
 
     " Turn off the toolbar
     set guioptions-=T
