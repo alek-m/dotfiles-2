@@ -149,6 +149,14 @@ Bundle 'tpope/vim-markdown'
 Bundle 'jelera/vim-javascript-syntax'
 Bundle 'scrooloose/syntastic'
 Bundle 'othree/html5.vim'
+Bundle 'flazz/vim-colorschemes'
+Bundle 'godlygeek/tabular'
+Bundle 'majutsushi/tagbar'
+Bundle "daylerees/colour-schemes", { "rtp": "vim/" }
+Bundle 'Lokaltog/powerline'
+Bundle 'Valloric/YouCompleteMe'
+Bundle 'stephenmckinney/vim-solarized-powerline'
+"Bundle 'itchyny/lightline.vim'
 
 filetype plugin indent on
 
@@ -158,13 +166,24 @@ let g:syntastic_javascript_checkers = ['jshint']
 " JavaScript folding & extended syntax
 au FileType javascript call JavaScriptFold()
 
+" No GUI running
+if !has('gui_running')
+  set t_Co=256
+endif
+
 " Run these only if there's a GUI
 if has('gui_running')
   " Adding powerline and YouCompleteMe
-  Bundle 'Lokaltog/powerline'
-  Bundle 'Valloric/YouCompleteMe'
+  let g:Powerline_theme='short'
+  let g:Powerline_colorscheme='solarized256_dark'
 
   " Adding support for powerline
   set rtp+=/Users/sdiwakar/.vim/bundle/powerline/powerline/bindings/vim
+
+  " let g:lightline = {
+  "     \ 'colorscheme': 'wombat',
+  "     \ }
+
+  nmap <F8> :TagbarToggle<CR>
 endif
 

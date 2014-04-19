@@ -2,13 +2,12 @@
 if has('gui_running')
 
     set mouse=a
-    colorscheme guru
+    colorscheme solarized
 
     set lines=55
     set columns=180
     set transparency=0
     set guifont=Source\ Code\ Pro\ for\ Powerline:h15
-    "set guifont=Inconsolata:h16
     "set linespace=1.3 
 
     " Turn off the toolbar
@@ -42,5 +41,17 @@ if has('gui_running')
 
     " Make NERDTree hijack netrw
     let NERDTreeHijackNetrw=1
-    
+
+    " Adding powerline and YouCompleteMe
+    let g:Powerline_theme='short'
+    let g:Powerline_colorscheme='solarized256_dark'
+
+    " Adding support for powerline
+    set rtp+=/Users/sdiwakar/.vim/bundle/powerline/powerline/bindings/vim
+
+    " let g:lightline = {
+    "     \ 'colorscheme': 'wombat',
+    "     \ }
+
+    nmap <F8> :TagbarToggle<CR>
 endif 

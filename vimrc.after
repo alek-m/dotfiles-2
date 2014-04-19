@@ -1,0 +1,15 @@
+if has('gui_running')
+  set guifont=Source\ Code\ Pro\ for\ Powerline:h14
+else
+endif 
+
+" Disable neocomplete
+let g:neocomplete#enable_at_startup = 0
+
+if !has("gui_running")
+  syntax on
+  set background=dark
+  let g:solarized_termtrans = 1
+  let g:solarized_termcolors=256
+  colorscheme solarized
+endif
