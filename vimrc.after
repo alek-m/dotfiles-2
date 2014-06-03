@@ -1,10 +1,7 @@
 if has('gui_running')
-  set guifont=Source\ Code\ Pro\ for\ Powerline:h14
+  set guifont=Source\ Code\ Pro\ for\ Powerline:h15
 else
 endif 
-
-" Disable neocomplete
-let g:neocomplete#enable_at_startup = 0
 
 if !has("gui_running")
   syntax on
@@ -13,3 +10,11 @@ if !has("gui_running")
   let g:solarized_termcolors=256
   colorscheme solarized
 endif
+
+set foldmethod=syntax
+
+" Disable neocomplete
+let g:neocomplete#enable_at_startup = 0
+
+" Tell Yankring to put its history file in a neat location
+let g:yankring_history_dir = '~/.vim/yankring.history'
