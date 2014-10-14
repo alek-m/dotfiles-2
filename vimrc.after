@@ -1,7 +1,8 @@
 if has('gui_running')
   set guifont=Source\ Code\ Pro\ for\ Powerline:h15,Inconsolata\ XL:h17,Inconsolata:h20,Monaco:h17
+  " set colorcolumn=80
 else
-endif 
+endif
 
 if !has("gui_running")
   syntax on
@@ -13,8 +14,14 @@ endif
 
 set foldmethod=syntax
 
+" Remove trailing whitespaces on save
+autocmd BufWritePre * :%s/\s\+$//e
+
 " Disable neocomplete
 let g:neocomplete#enable_at_startup = 0
 
 " Tell Yankring to put its history file in a neat location
 let g:yankring_history_dir = '~/.vim/yankring.history'
+
+" Install JSLint
+Bundle "wookiehangover/jshint.vim"
