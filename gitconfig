@@ -1,6 +1,6 @@
 [user]
-	name = Shaon Diwakar
-	email = shaon@shaon.net
+	name = 
+	email = 
 [include]
   path = ~/.dotfiles/gitconfig.private
 [apply]
@@ -13,7 +13,7 @@
 [status]
     color = auto
 [core]
-	excludesfile = /Users/sdiwakar/.gitignore_global
+	excludesfile = /Users/shaond/.gitignore_global
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 

@@ -21,7 +21,7 @@ autocmd BufWritePre * :%s/\s\+$//e
 let g:neocomplete#enable_at_startup = 0
 
 " Tell Yankring to put its history file in a neat location
-let g:yankring_history_dir = '~/.vim/yankring.history'
+let g:yankring_history_dir = '~/.yankring.history'
 
 " Install JSLint
 Bundle "wookiehangover/jshint.vim"
