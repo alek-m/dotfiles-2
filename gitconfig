@@ -1,6 +1,6 @@
 [user]
-	name = 
-	email = 
+	name = Shaon Diwakar
+	email = shaon@shaon.net
 [include]
   path = ~/.dotfiles/gitconfig.private
 [apply]
