@@ -13,39 +13,29 @@ call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'pangloss/vim-javascript'
-" Plugin 'altercation/solarized'
 Plugin 'tpope/vim-fugitive'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
 Plugin 'digitaltoad/vim-jade'
 Plugin 'tpope/vim-markdown'
 Plugin 'scrooloose/syntastic'
+" Plugin 'jiangmiao/auto-pairs'
 Plugin 'othree/html5.vim'
-Plugin 'flazz/vim-colorschemes'
 Plugin 'godlygeek/tabular'
 Plugin 'majutsushi/tagbar'
-Bundle "daylerees/colour-schemes", { "rtp": "vim/" }
-" Plugin 'Lokaltog/powerline'
-" Plugin 'stephenmckinney/vim-solarized-powerline'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'itchyny/lightline.vim'
 Plugin 'wookiehangover/jshint.vim'
 Bundle 'sheerun/vim-polyglot'
-Bundle 'garbas/vim-snipmate.git'
-Bundle 'honza/vim-snippets'
 Bundle 'jtratner/vim-flavored-markdown.git'
-Bundle 'nelstrom/vim-markdown-preview'
 Bundle 'skwp/vim-html-escape'
 Bundle "chrisbra/color_highlight.git"
-Bundle "skwp/vim-colors-solarized"
-Bundle "jby/tmux.vim.git"
-Bundle "morhetz/gruvbox"
 Bundle "xsunsmile/showmarks.git"
-Bundle "chriskempson/base16-vim"
 Bundle "skwp/YankRing.vim"
 Bundle "Shougo/neocomplete.git"
 Bundle "godlygeek/csapprox.git"
 Bundle "nathanaelkane/vim-indent-guides"
+Bundle "skwp/vim-colors-solarized"
 
 call vundle#end()
 
@@ -68,7 +58,9 @@ if has('gui_running')
         \   'fugitive': 'MyFugitive',
         \   'readonly': 'MyReadonly',
         \   'filename': 'MyFilename',
-        \ }
+        \ },
+        \ 'separator': { 'left': '⮀', 'right': '⮂' },
+        \ 'subseparator': { 'left': '⮁', 'right': '⮃' }
         \ }
 
   function! MyReadonly()
@@ -171,6 +163,13 @@ set directory=~/.vim/tmp//
 set nobackup
 set noswapfile
 
+" hit ,f to find the definition of the current class
+" this uses ctags. the standard way to get this is Ctrl-]
+nnoremap <silent> ,f <C-]>
+
+" use ,F to jump to tag in a vertical split
+nnoremap <silent> ,F :let word=expand("<cword>")<CR>:vsp<CR>:wincmd w<cr>:exec("tag ". word)<cr>
+
 " neocomplete
 " Next generation completion framework.
 
@@ -262,9 +261,6 @@ filetype plugin indent on
 " Enable JShint checking
 let g:syntastic_javascript_checkers = ['jshint']
 
-" JavaScript folding & extended syntax
-" au FileType javascript call JavaScriptFold()
-
 " Tell showmarks to not include the various brace marks (),{}, etc
 let g:showmarks_include = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXY"
 
@@ -305,7 +301,6 @@ if has("mouse")
 endif
 
 set foldmethod=syntax
-au FileType javascript call JavaScriptFold()
 
 " Tell Yankring to put its history file in a neat location
 let g:yankring_history_dir = '~/.vim'
@@ -359,3 +354,4 @@ set guioptions-=T
 
 let vimsettings = '~/.vim/settings'
 so ~/.vim/settings/solarized.vim
+so ~/.vim/settings/windowkiller.vim
