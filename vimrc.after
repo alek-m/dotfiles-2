@@ -1,27 +1,29 @@
 if has('gui_running')
-  set guifont=Source\ Code\ Pro\ for\ Powerline:h15,Inconsolata\ XL:h17,Inconsolata:h20,Monaco:h17
+  set guifont=Hack:h16,Source\ Code\ Pro\ for\ Powerline:h15,Inconsolata\ XL:h17,Inconsolata:h20,Monaco:h17
   " set colorcolumn=80
 else
 endif
 
-if !has("gui_running")
-  syntax on
-  set background=dark
-  let g:solarized_termtrans = 1
-  let g:solarized_termcolors=256
-  colorscheme solarized
+" Remove trailing whitespaces on save
+autocmd BufWritePre * :%s/\s\+$//e
+
+if !has('lua')
+  let g:neocomplete#enable_at_startup = 0
+else
+  let g:neocomplete#enable_at_startup = 1
+endif
+
+" Release the kraken!
+if has("mouse")
+  set mouse=a
 endif
 
 set foldmethod=syntax
 
-" Remove trailing whitespaces on save
-autocmd BufWritePre * :%s/\s\+$//e
-
-" Disable neocomplete
-let g:neocomplete#enable_at_startup = 0
-
 " Tell Yankring to put its history file in a neat location
-let g:yankring_history_dir = '~/.yankring.history'
+let g:yankring_history_dir = '~/.yankring'
+
 
 " Install JSLint
 Bundle "wookiehangover/jshint.vim"
+Bundle "altercation/solarized"
