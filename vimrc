@@ -275,6 +275,7 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+let g:syntastic_full_redraws = 1
 
 " Load our Js checker
 let g:syntastic_javascript_checkers = ['jshint']
@@ -356,6 +357,3 @@ let g:nerdtree_tabs_open_on_console_startup=1
 
 set shell=bash
 set ttymouse=xterm2
-
-" Syntastic opions
-let g:syntastic_full_redraws=1
