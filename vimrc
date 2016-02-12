@@ -22,14 +22,16 @@ Plugin 'digitaltoad/vim-jade'
 Plugin 'tpope/vim-markdown'
 Plugin 'scrooloose/syntastic'
 Plugin 'othree/html5.vim'
-" Plugin 'wookiehangover/jshint.vim'
+Plugin 'wookiehangover/jshint.vim'
 Bundle 'sheerun/vim-polyglot'
 Bundle 'jtratner/vim-flavored-markdown.git'
 Bundle 'skwp/vim-html-escape'
+Bundle 'ap/vim-css-color'
 
 " File Management
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
+Bundle 'jistr/vim-nerdtree-tabs'
 Plugin 'Raimondi/delimitMate'
 Plugin 'godlygeek/tabular'
 Plugin 'majutsushi/tagbar'
@@ -343,3 +345,17 @@ set guioptions-=T
 let vimsettings = '~/.vim/settings'
 so ~/.vim/settings/solarized.vim
 so ~/.vim/settings/windowkiller.vim
+
+let g:NERDTreeWinSize=60
+let NERDTreeMapOpenInTab='<ENTER>'
+let NERDTreeMapOpenInTab='\r'
+map <Leader>n <plug>NERDTreeTabsToggle<CR>
+
+" NERDTreeTabsToggle Options
+let g:nerdtree_tabs_open_on_console_startup=1
+
+set shell=bash
+set ttymouse=xterm2
+
+" Syntastic opions
+let g:syntastic_full_redraws=1

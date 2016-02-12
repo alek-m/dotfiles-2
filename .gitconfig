@@ -9,3 +9,6 @@
 	trustExitCode = true
 [core]
 	excludesfile = /Users/shaond/.gitignore_global
+	editor = vim
+[color]
+	ui = auto
